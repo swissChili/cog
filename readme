@@ -11,7 +11,7 @@ an experimental 3d roguelike game written in c.
 3d rendering is done via raycasting. this is not the same as
 ray tracing, in fact it is far more efficient, with severe
 technical limitations in terms of what can be rendered. it was
-pioneered by wolfenstien 3d, the first game (that i knwo of) to
+pioneered by wolfenstien 3d, the first game (that i know of) to
 use this rendering technique. basically the way it works is 
 the map is a grid of either nothing (' ') or a wall ('#').
 for example, consider this map:
@@ -35,6 +35,44 @@ position for each column of the view (terminal cell). once it
 colides with some wall, the distance from the player is recorded,
 and used to render a column of cells on the screen with an appropriate
 height.
+
+~~~~~~~~
+  maps
+~~~~~~~~
+
+cog maps are stored as ascii encoded text files. they translate literally
+to the map that will be rendered by cog. the diagram above demonstrating
+rendering, is in fact, a valid map. large maps are split into "chunks" and
+rendered in different map buffers (see map.h).
+
+  +-----------+
+  |  example  |
+  +-----------+
+
+  the following ascii could be copy and pasted into a map file
+  (unindented), and it should work:
+
+      ##################
+  #####                #  #####
+  #                    ####   #
+  #                           #
+  #            @              #
+  #                           #
+  #                           #
+  #############################
+
+  +-------+
+  | chars |
+  +-------+
+
+  each character in a map means something, most of these are yet to be
+  implemented, but here's what they will mean in the end:
+
+  # wall
+  @ player
+  = door
+  a-z teleport
+  A-Z corresponding teleport exit 
 
 ~~~~~~~~~~~~
   building
