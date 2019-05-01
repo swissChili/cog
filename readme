@@ -1,0 +1,54 @@
+=======
+  cog
+=======
+
+an experimental 3d roguelike game written in c.
+
+~~~~~~~~~~~~~~~~~~~
+  technology used
+~~~~~~~~~~~~~~~~~~~
+
+3d rendering is done via raycasting. this is not the same as
+ray tracing, in fact it is far more efficient, with severe
+technical limitations in terms of what can be rendered. it was
+pioneered by wolfenstien 3d, the first game (that i knwo of) to
+use this rendering technique. basically the way it works is 
+the map is a grid of either nothing (' ') or a wall ('#').
+for example, consider this map:
+
++-----------+
+|#####=#####|
+|#         #|
+|#  ##  @  #|
+|###########|
++-----------+
+
+(the |, -, and + outlines serve simply as a demonstration, they
+are meaningless.)
+
+the @ symbol represents the player character (in typical roguelike
+fashion).
+
+let's say the player is looking in the direction of the door ('='),
+this would be rendered by casting a ray outwards from the players
+position for each column of the view (terminal cell). once it
+colides with some wall, the distance from the player is recorded,
+and used to render a column of cells on the screen with an appropriate
+height.
+
+~~~~~~~~~~~~
+  building
+~~~~~~~~~~~~
+
+run make to build cog. by default it will also run the program.
+the binary will be located in dist/cog.
+
+  $ make
+
+~~~~~~~~~~~~~~~~
+  dependencies
+~~~~~~~~~~~~~~~~
+
+none so far. perhaps ncurses will be used later on, but i'm not
+sure yet.
+
