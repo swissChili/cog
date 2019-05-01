@@ -13,12 +13,10 @@
  * is C so there's no point in even making it a struct as a simple
  * typedef will do just fine.
  */
-
 typedef char map[MAX][MAX];
 
 
 void new_map_empty ( map );
-
 void print_map ( map );
 
 #endif /* MAP_H */
