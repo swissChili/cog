@@ -83,6 +83,12 @@ the binary will be located in dist/cog.
 
   $ make
 
+to build a production build (optimized compilation, stripped
+debug functions) set the BUILD variable to production in the
+makefile
+
+  $ make BUILD=production
+
 ~~~~~~~~~~~~~~~~
   dependencies
 ~~~~~~~~~~~~~~~~

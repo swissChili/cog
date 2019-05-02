@@ -17,7 +17,13 @@ typedef char map[MAX][MAX];
 
 
 void new_map_empty ( map );
+/*
+ * Print map to stdout without ncurses window. Also just for
+ * debug builds
+ */
+#ifndef BUILD_PRODUCTION
 void print_map ( map );
+#endif
 
 #endif /* MAP_H */
 
