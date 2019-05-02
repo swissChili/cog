@@ -87,6 +87,6 @@ the binary will be located in dist/cog.
   dependencies
 ~~~~~~~~~~~~~~~~
 
-none so far. perhaps ncurses will be used later on, but i'm not
-sure yet.
+ncurses:
+  # dnf install ncurses-devel
 
