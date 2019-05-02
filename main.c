@@ -3,24 +3,23 @@
 #include "player.h"
 #include "render.h"
 
+#define VERSION "v0.0.1-devel"
+
 int main (/*int argc, char **argv*/)
 {
-  puts ("hello");
+  puts ("cog " VERSION);
 
   map first_room =
   {
     "#####",
     "#   #",
-    "##@ #",
+    "##  #",
     "#  ##",
     "#####"
   };
 
-  player p = { 0, 0, 1.0, 0.0 };
+  player p = { 1, 2, 1.0, 0.0 };
 
-  print_map (first_room);
-  print_player (&p);
-
-  render ();
+  render ( first_room, p );
 }
 
