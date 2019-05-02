@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "map.h"
 #include "player.h"
+#include "render.h"
 
 int main (/*int argc, char **argv*/)
 {
@@ -19,5 +20,7 @@ int main (/*int argc, char **argv*/)
 
   print_map (first_room);
   print_player (&p);
+
+  render ();
 }
 
